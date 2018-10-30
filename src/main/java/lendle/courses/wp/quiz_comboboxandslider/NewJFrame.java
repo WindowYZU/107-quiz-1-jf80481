@@ -5,6 +5,12 @@
  */
 package lendle.courses.wp.quiz_comboboxandslider;
 
+import java.awt.FlowLayout;
+import java.util.Vector;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.WindowConstants;
+
 /**
  *
  * @author lendle
@@ -16,6 +22,20 @@ public class NewJFrame extends javax.swing.JFrame {
      */
     public NewJFrame() {
         initComponents();
+  
+        for(int i=0; i<=100; i=i+10){
+            jComboBox1.addItem(""+i);
+            
+            jSlider1.setMaximum(100);
+            jSlider1.setMinimum(0);
+            jSlider1.setPaintTicks(true);
+            jSlider1.setPaintLabels(true);
+            jSlider1.setPaintTrack(true);
+            jSlider1.setMinorTickSpacing(10);
+            jSlider1.setMajorTickSpacing(10);
+            
+            jSlider1.setValue(i);
+        }
     }
 
     /**
@@ -34,8 +54,6 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel1.setText("combobox 裡面放0，10，20，30......100");
 
@@ -102,7 +120,9 @@ public class NewJFrame extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
+        
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
